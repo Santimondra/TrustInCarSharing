@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+
+<body>
+    <form onsubmit="" action="https://docs.google.com/forms/d/e/1FAIpQLSdpM5fz45kVz4vLx9jCyyk2bPvzAuNQEHsaVMXlV70Jd7JDGg/formResponse">
+        <h1>
+            <b>Parte 3:</b> Conductor</h1>
+        <label>¿Aceptarías a esta persona?</label>
+        <p class="comment">0 = NO y 1 = SI</p>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.567504639" min="0" max="1" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <label>¿Cuánto impactó que compañeros o amigos hayan tenido buenas (o malas) experiencias viajando con otras personas de la U?</label>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.663856584" min="0" max="100" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <label>¿Cuánto impactó que compañeros o amigos hayan tenido buenas (o malas) experiencias viajando con esta herramienta?</label>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.483001430" min="0" max="100" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <label>¿Cuanto confiaste en los testimonios y calificaciones de otros conductores que han usado esta herramienta?</label>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.408148766" min="0" max="100" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <label>¿Cuánto Impactó en tu decisión el ver las calificaciones de compañeros o amigos sobre la persona?</label>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.968427542" min="0" max="100" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <label>¿Cómo crees que el viaje hubiese sido con esta persona basado en lo que viste de el/ella en su perfil?</label>
+        <div class="range-slider">
+            <input class="range-slider__range" type="range" name="entry.1087305727" min="0" max="100" value="0">
+            <span class="range-slider__value">0</span>
+        </div>
+        <button type="submit">TERMINAR</button>
+    </form>
+
+    <script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+        var rangeSlider = function () {
+            var slider = $(".range-slider"),
+                range = $(".range-slider__range"),
+                value = $(".range-slider__value");
+
+            slider.each(function () {
+                value.each(function () {
+                    var value = $(this).
+                    prev().
+                    attr("value");
+                    $(this).html(value);
+                });
+
+                range.on("input", function () {
+                    $(this).
+                    next(value).
+                    html(this.value);
+                });
+            });
+        };
+
+        rangeSlider();
+        //# sourceURL=pen.js
+    </script>
+</body>
+
+</html>
